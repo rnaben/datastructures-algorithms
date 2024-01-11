@@ -1,3 +1,5 @@
+//: [Previous](@previous)
+
 /*
  ___ _         ___    _  _     _        _   _
 | _ |_)__ _   / _ \  | \| |___| |_ __ _| |_(_)___ _ _
@@ -7,44 +9,6 @@
  */
 
 import Foundation
-
-func findNemo(_ arr: [String]) {
-    let before = Date()
-    
-    for i in 0..<arr.count {
-        if arr[i] == "nemo" {
-            print("Found him!")
-        }
-    }
-    
-    let after = Date()
-    let component = Calendar.current.dateComponents([.nanosecond], from: before, to: after)
-    let milliSeconds: Double = Double(component.nanosecond! / 1000000)
-//    print("Finding nemo took: \(milliSeconds))")
-}
-
-//let nemo = ["nemo"]
-let nemo = Array<String>(repeating: "", count: 100000)
-findNemo(nemo)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // Constant time O(1)
 func constantTime(_ n: Int) -> Int {
@@ -153,3 +117,6 @@ func commonItemsHash(_ A: [Int], _ B: [Int]) -> Bool {
 }
 commonItemsHash([1, 2, 3], [4, 5, 6])
 commonItemsHash([1, 2, 3], [3, 5, 6])
+
+
+//: [Next](@next)
