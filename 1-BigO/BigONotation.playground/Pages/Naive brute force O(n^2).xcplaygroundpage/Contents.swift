@@ -25,6 +25,7 @@ func commonItemsBrute(_ A: [Int], _ B: [Int]) -> Bool {
     }
     return false
 }
+
 commonItemsBrute([1, 2, 3], [4, 5, 6])
 commonItemsBrute([1, 2, 3], [3, 5, 6])
 
@@ -34,6 +35,7 @@ func commonItemsHash(_ A: [Int], _ B: [Int]) -> Bool {
     
     // Still looping...but not nested - O(2n) vs O(n^2)
     var hashA = [Int: Bool]()
+    
     for a in A { // O(n)
         hashA[a] = true
     }
@@ -44,8 +46,10 @@ func commonItemsHash(_ A: [Int], _ B: [Int]) -> Bool {
             return true
         }
     }
+    
     return false
 }
+
 commonItemsHash([1, 2, 3], [4, 5, 6])
 commonItemsHash([1, 2, 3], [3, 5, 6])
 
