@@ -1,4 +1,4 @@
-import UIKit
+import Foundation
 
 /*
  Rotate array to right N times.
@@ -18,7 +18,19 @@ import UIKit
 
 func solution(A: [Int], K: Int) -> [Int] {
     // do your work here...
-    return [Int]()
+    var num = 0
+    var result = A
+    
+    if A.count >= K {
+        while num < K {
+            result.insert(result.last!, at: 0)
+            result.removeLast()
+            num += 1
+        }
+    }
+    
+    // return [Int]()
+    return result
 }
 
 solution(A: [1, 2, 3, 4, 5], K: 1) // 5 1 2 3 4
