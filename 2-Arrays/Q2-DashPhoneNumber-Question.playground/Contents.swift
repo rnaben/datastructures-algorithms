@@ -1,4 +1,4 @@
-import UIKit
+import Foundation
 
 /*
  We are given a string S representing a phone number, which we would like to reformat. String S consists of N characters: digits, spaces, and/or dashes. It contains at least two digits.
@@ -24,7 +24,35 @@ import UIKit
  */
 func solution(_ S : String) -> String {
     // do your work here
-    return ""
+    var s = S.replacingOccurrences(of: " ", with: "")
+    s = s.replacingOccurrences(of: "-", with: "")
+    
+    var result = ""
+    
+    var count = -2
+    for c in s {
+        result.append(c)
+        if count % 3 == 0 {
+            result.append("-")
+        }
+        count += 1
+    }
+    
+    if result.last == "-" {
+        result.removeLast()
+    }
+    
+    var chars = Array(result)
+    let secondLastIndx = chars.count - 2
+    
+    if chars[secondLastIndx] == "-" {
+        chars[secondLastIndx] = chars[secondLastIndx - 1]
+        chars[secondLastIndx - 1] = "-"
+    }
+    
+    result = String(chars)
+    
+    return result
 }
 
 solution("123456789")           // 123-456-789
